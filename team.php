@@ -6,10 +6,14 @@ class Team {
   protected $name;
   protected $members = [];
 
-  public function __construct($name, $members)
+  public function __construct($name, $members=[])
   {
     $this->name = $name;
     $this->members = $members;
+  }
+
+  public static function start(...$params) {
+    return new static(...$params);
   }
 
   public function name() {
@@ -25,8 +29,8 @@ class Team {
   }
 }
 
-$team = new Team('victor', [
-  'fifa', 'libertadores', 'mercosul'
+$team = Team::start('victor', [
+  'fifa', 'libertadores', 'mercosul', 'asia'
 ]);
 
 var_dump($team->members());
