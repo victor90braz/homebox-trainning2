@@ -11,7 +11,7 @@ class Collection
 
   public function sum($key)
   {
-      return array_sum(array_map(fn($item) => $item->$key, $this->items));
+      return array_sum(array_column($this->items,$key));
   }
 
   public function lenght() {
@@ -40,7 +40,7 @@ class Video
 }
 
 $videos = new VideosCollection([
-  new Video('The mask', 800),
+  new Video('The mask', 5000),
   new Video('King Kong', 250)
 ]);
 
