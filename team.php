@@ -12,7 +12,7 @@ class Team {
     $this->members = $members;
   }
 
-  public static function start(...$params) {
+  public static function start(...$params) { // ...$params to get all parameters from constructor
     return new static(...$params);
   }
 
