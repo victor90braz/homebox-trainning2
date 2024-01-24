@@ -17,7 +17,17 @@ class Collection
       }, $this->items));
   }
 
+  public function lenght() {
+    return $this->sum('length');
+  }
+}
 
+class VideosCollection extends Collection {
+
+  public function length()
+  {
+    return $this->sum('length');
+  }
 }
 
 class Video
@@ -32,9 +42,9 @@ class Video
   }
 }
 
-$collectionFilms = new Collection([
+$videos = new VideosCollection([
   new Video('The mask', 200),
   new Video('King Kong', 250)
 ]);
 
-var_dump($collectionFilms->sum('length'));
+var_dump($videos->lenght());
