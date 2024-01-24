@@ -43,11 +43,10 @@ class Member {
   }
 }
 
-
-
-$team = Team::start('Flamengo', [
+$bootcamp = Team::start('ISDI CODERS', [
   new Member('John Doe'),
   new Member('Luis Garcia')
 ]);
 
-var_dump($team->members());
+var_dump($bootcamp->name());
+var_dump($bootcamp->members());
