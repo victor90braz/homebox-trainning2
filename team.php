@@ -29,8 +29,25 @@ class Team {
   }
 }
 
-$team = Team::start('victor', [
-  'fifa', 'libertadores', 'mercosul', 'asia'
+class Member {
+  protected $name;
+
+  public function __construct($name)
+  {
+    $this->name = $name;
+  }
+
+  public function lastViewed()
+  {
+
+  }
+}
+
+
+
+$team = Team::start('Flamengo', [
+  new Member('John Doe'),
+  new Member('Luis Garcia')
 ]);
 
 var_dump($team->members());
