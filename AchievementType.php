@@ -1,6 +1,6 @@
 <?php
 
-class AchievementType
+abstract class AchievementType
 {
     public function name()
     {
