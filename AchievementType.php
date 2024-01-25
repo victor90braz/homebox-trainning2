@@ -1,5 +1,19 @@
 <?php
 
+class AchievementType
+{
+    public function name()
+    {
+        $class = (new ReflectionClass(AchievementType::class))->getShortName();
+
+        return trim(preg_replace('/[A-Z]/', ' $0', $class));
+    }
+
+    public function icon()
+    {
+        return 'first_thousand_points.png';
+    }
+}
 class FirstThousandPoints
 {
     public function name()
@@ -35,3 +49,7 @@ class FirstBestAnswer
 
     }
 }
+
+$achievement = new AchievementType();
+
+var_dump($achievement->name());
