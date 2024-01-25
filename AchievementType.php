@@ -13,6 +13,8 @@ abstract class AchievementType
     {
         return strtolower(str_replace(' ', '-', $this->name(). '.png'));
     }
+    abstract function qualifier($user);
+
 }
 class FirstThousandPoints extends AchievementType
 {
@@ -30,6 +32,13 @@ class FirstBestAnswer extends AchievementType
     }
 }
 
-$achievement = new FirstBestAnswer();
+class ReachTop50 extends AchievementType {
+    public function qualifier($user)
+    {
+        return $user;
+    }
+}
 
-var_dump($achievement->icon());
+$achievement = new ReachTop50();
+
+var_dump($achievement->qualifier('user'));
