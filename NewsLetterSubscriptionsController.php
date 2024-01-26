@@ -4,6 +4,7 @@ interface Newsletter
 {
     public function subscribe($email);
 }
+
 class NewsLetterSubscriptionsController
 {
     public function store(Newsletter $newsletter)
@@ -41,3 +42,5 @@ class Majorel  implements Newsletter
 $newsletter = new NewsLetterSubscriptionsController();
 
 var_dump($newsletter->store(new Drip()));
+var_dump($newsletter->store(new CampaignMonitor()));
+var_dump($newsletter->store(new Majorel()));
